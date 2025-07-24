@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Onboarding Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main form heading section -->
+    <div>
+        <h2>EMPLOYMENT ONBOARDING FORM</h2>
+    </div>
+
+    <!-- Begin onboarding form -->
+    <form action="/serverlogic" method="post">
+        <fieldset>
+            <legend>Basic Information</legend>
+
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname" required maxlength="30" autofocus>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname" required maxlength="30">
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Create Password:</label>
+            <input type="password" id="password" name="password" required minlength="6">
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10">
+
+            <label for="website">Personal Website/Portfolio:</label>
+            <input type="url" id="website" name="website" required>
+
+            <label for="search">Search Your Role:</label>
+            <input type="search" id="search" name="search" required>
+
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Work Preferences</legend>
+
+            <label>Work Mode:</label>
+            <input type="radio" id="remote" name="workmode" value="Remote" required>
+            <label for="remote">Remote</label>
+
+            <input type="radio" id="onsite" name="workmode" value="Onsite">
+            <label for="onsite">Onsite</label>
+
+            <label>Preferred Technologies:</label>
+            <input type="checkbox" id="java" name="skill_java" value="Java">
+            <label for="java">Java</label>
+
+            <input type="checkbox" id="python" name="skill_python" value="Python">
+            <label for="python">Python</label>
+
+            <input type="checkbox" id="js" name="skill_js" value="JavaScript">
+            <label for="js">JavaScript</label>
+
+            <input type="checkbox" id="sql" name="skill_sql" value="SQL">
+            <label for="sql">SQL</label>
+
+            <label for="department">Select Department:</label>
+            <select id="department" name="department" required>
+                <option value="">--Select--</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Sales">Sales</option>
+                <option value="Finance">Finance</option>
+            </select>
+
+            <label for="experience">Years of Experience:</label>
+            <input type="number" id="experience" name="experience" min="0" max="40" required>
+
+            <label for="about">Tell us about yourself:</label>
+            <textarea id="about" name="about" rows="4" required>I am excited to join the team!</textarea>
+
+            <label for="progress">Profile Completion Progress:</label>
+            <progress id="progress" value="75" max="100"></progress>
+        </fieldset>
+
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Reset Form">
+    </form>
+
+</body>
+</html>
